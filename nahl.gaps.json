@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-06-01T04:29:02.350Z",
+  "scraped_at": "2026-06-01T08:01:09.863Z",
   "league_name": "NAHL",
   "season": "2022-23 NA3HL",
   "teams": [
     {
       "team_id": 388484,
-      "team_name": "388484",
+      "team_name": "Louisiana Drillers",
       "aging_out": {
         "F": 7,
         "D": 6,
@@ -21,7 +21,7 @@
     },
     {
       "team_id": 388493,
-      "team_name": "388493",
+      "team_name": "Mason City Toros",
       "aging_out": {
         "F": 7,
         "D": 2,
@@ -37,7 +37,7 @@
     },
     {
       "team_id": 388452,
-      "team_name": "388452",
+      "team_name": "Great Falls Americans",
       "aging_out": {
         "F": 6,
         "D": 3,
@@ -53,7 +53,7 @@
     },
     {
       "team_id": 388395,
-      "team_name": "388395",
+      "team_name": "Bay State Bobcats",
       "aging_out": {
         "F": 8,
         "D": 0,
@@ -69,7 +69,7 @@
     },
     {
       "team_id": 388408,
-      "team_name": "388408",
+      "team_name": "Butte Cobras",
       "aging_out": {
         "F": 6,
         "D": 2,
@@ -85,7 +85,7 @@
     },
     {
       "team_id": 388577,
-      "team_name": "388577",
+      "team_name": "Sheridan Hawks",
       "aging_out": {
         "F": 4,
         "D": 3,
@@ -101,7 +101,7 @@
     },
     {
       "team_id": 388364,
-      "team_name": "388364",
+      "team_name": "Alexandria Blizzard",
       "aging_out": {
         "F": 5,
         "D": 2,
@@ -117,7 +117,7 @@
     },
     {
       "team_id": 388497,
-      "team_name": "388497",
+      "team_name": "Mid Cities Jr. Stars",
       "aging_out": {
         "F": 7,
         "D": 1,
@@ -133,7 +133,7 @@
     },
     {
       "team_id": 388544,
-      "team_name": "388544",
+      "team_name": "Oregon Tradesmen",
       "aging_out": {
         "F": 5,
         "D": 2,
@@ -149,7 +149,7 @@
     },
     {
       "team_id": 388437,
-      "team_name": "388437",
+      "team_name": "Granite City Lumberjacks",
       "aging_out": {
         "F": 5,
         "D": 3,
@@ -165,7 +165,7 @@
     },
     {
       "team_id": 388425,
-      "team_name": "388425",
+      "team_name": "Gillette Wild",
       "aging_out": {
         "F": 5,
         "D": 2,
@@ -181,7 +181,7 @@
     },
     {
       "team_id": 388523,
-      "team_name": "388523",
+      "team_name": "New Ulm Steel",
       "aging_out": {
         "F": 5,
         "D": 2,
@@ -197,7 +197,7 @@
     },
     {
       "team_id": 388550,
-      "team_name": "388550",
+      "team_name": "Peoria Mustangs",
       "aging_out": {
         "F": 4,
         "D": 2,
@@ -213,7 +213,7 @@
     },
     {
       "team_id": 388569,
-      "team_name": "388569",
+      "team_name": "Rochester Grizzlies",
       "aging_out": {
         "F": 5,
         "D": 3,
@@ -229,7 +229,7 @@
     },
     {
       "team_id": 388398,
-      "team_name": "388398",
+      "team_name": "Bozeman Icedogs",
       "aging_out": {
         "F": 4,
         "D": 1,
@@ -245,7 +245,7 @@
     },
     {
       "team_id": 388609,
-      "team_name": "388609",
+      "team_name": "Texas RoadRunners",
       "aging_out": {
         "F": 6,
         "D": 1,
@@ -261,7 +261,7 @@
     },
     {
       "team_id": 388540,
-      "team_name": "388540",
+      "team_name": "Norwich Sea Captains",
       "aging_out": {
         "F": 3,
         "D": 1,
@@ -277,7 +277,7 @@
     },
     {
       "team_id": 388463,
-      "team_name": "388463",
+      "team_name": "Helena Bighorns",
       "aging_out": {
         "F": 4,
         "D": 1,
@@ -293,7 +293,7 @@
     },
     {
       "team_id": 388387,
-      "team_name": "388387",
+      "team_name": "Austin Ice Bats",
       "aging_out": {
         "F": 4,
         "D": 1,
@@ -309,7 +309,7 @@
     },
     {
       "team_id": 388414,
-      "team_name": "388414",
+      "team_name": "Danbury Jr. Hat Tricks",
       "aging_out": {
         "F": 3,
         "D": 1,
@@ -325,7 +325,7 @@
     },
     {
       "team_id": 388475,
-      "team_name": "388475",
+      "team_name": "Long Beach Sharks",
       "aging_out": {
         "F": 4,
         "D": 1,
@@ -341,7 +341,7 @@
     },
     {
       "team_id": 388505,
-      "team_name": "388505",
+      "team_name": "West Bend Power",
       "aging_out": {
         "F": 5,
         "D": 0,
@@ -357,7 +357,7 @@
     },
     {
       "team_id": 388378,
-      "team_name": "388378",
+      "team_name": "Atlanta Capitals",
       "aging_out": {
         "F": 3,
         "D": 1,
@@ -373,7 +373,7 @@
     },
     {
       "team_id": 388602,
-      "team_name": "388602",
+      "team_name": "Texas Brahmas",
       "aging_out": {
         "F": 5,
         "D": 0,
@@ -389,7 +389,7 @@
     },
     {
       "team_id": 388619,
-      "team_name": "388619",
+      "team_name": "Willmar WarHawks",
       "aging_out": {
         "F": 2,
         "D": 2,
@@ -405,7 +405,7 @@
     },
     {
       "team_id": 388520,
-      "team_name": "388520",
+      "team_name": "New Mexico Ice Wolves",
       "aging_out": {
         "F": 1,
         "D": 3,
@@ -421,7 +421,7 @@
     },
     {
       "team_id": 388628,
-      "team_name": "388628",
+      "team_name": "Yellowstone Quake",
       "aging_out": {
         "F": 1,
         "D": 2,
@@ -437,7 +437,7 @@
     },
     {
       "team_id": 388530,
-      "team_name": "388530",
+      "team_name": "Northeast Generals",
       "aging_out": {
         "F": 2,
         "D": 1,
@@ -453,7 +453,7 @@
     },
     {
       "team_id": 388615,
-      "team_name": "388615",
+      "team_name": "Wausau Cyclones",
       "aging_out": {
         "F": 2,
         "D": 1,
@@ -469,7 +469,7 @@
     },
     {
       "team_id": 388391,
-      "team_name": "388391",
+      "team_name": "Badlands Sabres",
       "aging_out": {
         "F": 0,
         "D": 2,
@@ -485,7 +485,7 @@
     },
     {
       "team_id": 388516,
-      "team_name": "388516",
+      "team_name": "New Jersey Titans",
       "aging_out": {
         "F": 1,
         "D": 0,
@@ -501,7 +501,7 @@
     },
     {
       "team_id": 388512,
-      "team_name": "388512",
+      "team_name": "Minnesota Loons",
       "aging_out": {
         "F": 0,
         "D": 1,
