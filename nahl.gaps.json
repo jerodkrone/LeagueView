@@ -1,0 +1,519 @@
+﻿{
+  "scraped_at": "2026-06-01T03:16:57.306Z",
+  "league_name": "NAHL",
+  "season": "2022-23 NA3HL",
+  "teams": [
+    {
+      "team_id": 388484,
+      "team_name": "388484",
+      "aging_out": {
+        "F": 7,
+        "D": 6,
+        "G": 1
+      },
+      "returning": {
+        "F": 6,
+        "D": 2,
+        "G": 3
+      },
+      "aging_out_total": 14,
+      "returning_total": 11
+    },
+    {
+      "team_id": 388493,
+      "team_name": "388493",
+      "aging_out": {
+        "F": 7,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 6,
+        "G": 1
+      },
+      "aging_out_total": 10,
+      "returning_total": 14
+    },
+    {
+      "team_id": 388452,
+      "team_name": "388452",
+      "aging_out": {
+        "F": 6,
+        "D": 3,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 8,
+        "G": 3
+      },
+      "aging_out_total": 10,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388395,
+      "team_name": "388395",
+      "aging_out": {
+        "F": 8,
+        "D": 0,
+        "G": 2
+      },
+      "returning": {
+        "F": 6,
+        "D": 7,
+        "G": 2
+      },
+      "aging_out_total": 10,
+      "returning_total": 15
+    },
+    {
+      "team_id": 388408,
+      "team_name": "388408",
+      "aging_out": {
+        "F": 6,
+        "D": 2,
+        "G": 2
+      },
+      "returning": {
+        "F": 9,
+        "D": 4,
+        "G": 2
+      },
+      "aging_out_total": 10,
+      "returning_total": 15
+    },
+    {
+      "team_id": 388577,
+      "team_name": "388577",
+      "aging_out": {
+        "F": 4,
+        "D": 3,
+        "G": 2
+      },
+      "returning": {
+        "F": 10,
+        "D": 3,
+        "G": 2
+      },
+      "aging_out_total": 9,
+      "returning_total": 15
+    },
+    {
+      "team_id": 388364,
+      "team_name": "388364",
+      "aging_out": {
+        "F": 5,
+        "D": 2,
+        "G": 2
+      },
+      "returning": {
+        "F": 12,
+        "D": 8,
+        "G": 1
+      },
+      "aging_out_total": 9,
+      "returning_total": 21
+    },
+    {
+      "team_id": 388497,
+      "team_name": "388497",
+      "aging_out": {
+        "F": 7,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 11,
+        "D": 8,
+        "G": 2
+      },
+      "aging_out_total": 9,
+      "returning_total": 21
+    },
+    {
+      "team_id": 388544,
+      "team_name": "388544",
+      "aging_out": {
+        "F": 5,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 10,
+        "D": 9,
+        "G": 1
+      },
+      "aging_out_total": 8,
+      "returning_total": 20
+    },
+    {
+      "team_id": 388437,
+      "team_name": "388437",
+      "aging_out": {
+        "F": 5,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 16,
+        "D": 13,
+        "G": 2
+      },
+      "aging_out_total": 8,
+      "returning_total": 31
+    },
+    {
+      "team_id": 388425,
+      "team_name": "388425",
+      "aging_out": {
+        "F": 5,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 13,
+        "D": 7,
+        "G": 3
+      },
+      "aging_out_total": 8,
+      "returning_total": 23
+    },
+    {
+      "team_id": 388523,
+      "team_name": "388523",
+      "aging_out": {
+        "F": 5,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 12,
+        "D": 5,
+        "G": 1
+      },
+      "aging_out_total": 8,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388550,
+      "team_name": "388550",
+      "aging_out": {
+        "F": 4,
+        "D": 2,
+        "G": 2
+      },
+      "returning": {
+        "F": 12,
+        "D": 6,
+        "G": 1
+      },
+      "aging_out_total": 8,
+      "returning_total": 19
+    },
+    {
+      "team_id": 388569,
+      "team_name": "388569",
+      "aging_out": {
+        "F": 5,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 10,
+        "D": 6,
+        "G": 2
+      },
+      "aging_out_total": 8,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388398,
+      "team_name": "388398",
+      "aging_out": {
+        "F": 4,
+        "D": 1,
+        "G": 2
+      },
+      "returning": {
+        "F": 12,
+        "D": 6,
+        "G": 1
+      },
+      "aging_out_total": 7,
+      "returning_total": 19
+    },
+    {
+      "team_id": 388609,
+      "team_name": "388609",
+      "aging_out": {
+        "F": 6,
+        "D": 1,
+        "G": 0
+      },
+      "returning": {
+        "F": 9,
+        "D": 6,
+        "G": 3
+      },
+      "aging_out_total": 7,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388540,
+      "team_name": "388540",
+      "aging_out": {
+        "F": 3,
+        "D": 1,
+        "G": 2
+      },
+      "returning": {
+        "F": 10,
+        "D": 8,
+        "G": 0
+      },
+      "aging_out_total": 6,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388463,
+      "team_name": "388463",
+      "aging_out": {
+        "F": 4,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 8,
+        "G": 2
+      },
+      "aging_out_total": 6,
+      "returning_total": 17
+    },
+    {
+      "team_id": 388387,
+      "team_name": "388387",
+      "aging_out": {
+        "F": 4,
+        "D": 1,
+        "G": 0
+      },
+      "returning": {
+        "F": 14,
+        "D": 8,
+        "G": 4
+      },
+      "aging_out_total": 5,
+      "returning_total": 26
+    },
+    {
+      "team_id": 388414,
+      "team_name": "388414",
+      "aging_out": {
+        "F": 3,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 10,
+        "D": 5,
+        "G": 3
+      },
+      "aging_out_total": 5,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388475,
+      "team_name": "388475",
+      "aging_out": {
+        "F": 4,
+        "D": 1,
+        "G": 0
+      },
+      "returning": {
+        "F": 11,
+        "D": 5,
+        "G": 4
+      },
+      "aging_out_total": 5,
+      "returning_total": 20
+    },
+    {
+      "team_id": 388505,
+      "team_name": "388505",
+      "aging_out": {
+        "F": 5,
+        "D": 0,
+        "G": 0
+      },
+      "returning": {
+        "F": 10,
+        "D": 5,
+        "G": 3
+      },
+      "aging_out_total": 5,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388378,
+      "team_name": "388378",
+      "aging_out": {
+        "F": 3,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 11,
+        "D": 8,
+        "G": 3
+      },
+      "aging_out_total": 5,
+      "returning_total": 22
+    },
+    {
+      "team_id": 388602,
+      "team_name": "388602",
+      "aging_out": {
+        "F": 5,
+        "D": 0,
+        "G": 0
+      },
+      "returning": {
+        "F": 10,
+        "D": 6,
+        "G": 2
+      },
+      "aging_out_total": 5,
+      "returning_total": 18
+    },
+    {
+      "team_id": 388619,
+      "team_name": "388619",
+      "aging_out": {
+        "F": 2,
+        "D": 2,
+        "G": 0
+      },
+      "returning": {
+        "F": 12,
+        "D": 2,
+        "G": 3
+      },
+      "aging_out_total": 4,
+      "returning_total": 17
+    },
+    {
+      "team_id": 388520,
+      "team_name": "388520",
+      "aging_out": {
+        "F": 1,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 13,
+        "D": 7,
+        "G": 1
+      },
+      "aging_out_total": 4,
+      "returning_total": 21
+    },
+    {
+      "team_id": 388628,
+      "team_name": "388628",
+      "aging_out": {
+        "F": 1,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 11,
+        "D": 4,
+        "G": 2
+      },
+      "aging_out_total": 4,
+      "returning_total": 17
+    },
+    {
+      "team_id": 388530,
+      "team_name": "388530",
+      "aging_out": {
+        "F": 2,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 13,
+        "D": 5,
+        "G": 2
+      },
+      "aging_out_total": 4,
+      "returning_total": 20
+    },
+    {
+      "team_id": 388615,
+      "team_name": "388615",
+      "aging_out": {
+        "F": 2,
+        "D": 1,
+        "G": 0
+      },
+      "returning": {
+        "F": 8,
+        "D": 7,
+        "G": 1
+      },
+      "aging_out_total": 3,
+      "returning_total": 16
+    },
+    {
+      "team_id": 388391,
+      "team_name": "388391",
+      "aging_out": {
+        "F": 0,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 19,
+        "D": 6,
+        "G": 3
+      },
+      "aging_out_total": 3,
+      "returning_total": 28
+    },
+    {
+      "team_id": 388516,
+      "team_name": "388516",
+      "aging_out": {
+        "F": 1,
+        "D": 0,
+        "G": 0
+      },
+      "returning": {
+        "F": 12,
+        "D": 8,
+        "G": 4
+      },
+      "aging_out_total": 1,
+      "returning_total": 24
+    },
+    {
+      "team_id": 388512,
+      "team_name": "388512",
+      "aging_out": {
+        "F": 0,
+        "D": 1,
+        "G": 0
+      },
+      "returning": {
+        "F": 10,
+        "D": 7,
+        "G": 2
+      },
+      "aging_out_total": 1,
+      "returning_total": 19
+    }
+  ]
+}
