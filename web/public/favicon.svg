@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- puck body -->
+  <ellipse cx="32" cy="40" rx="28" ry="10" fill="#111827"/>
+  <rect x="4" y="24" width="56" height="16" fill="#1e293b"/>
+  <ellipse cx="32" cy="24" rx="28" ry="10" fill="#334155"/>
+  <!-- highlight line -->
+  <ellipse cx="32" cy="24" rx="18" ry="5" fill="none" stroke="#f97316" stroke-width="2.5"/>
+  <!-- top shine -->
+  <ellipse cx="26" cy="21" rx="7" ry="2.5" fill="#475569" opacity="0.5"/>
+</svg>

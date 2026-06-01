@@ -1,0 +1,87 @@
+{
+  "scraped_at": "2025-05-31T06:00:00.000Z",
+  "league_name": "NAHL",
+  "season": "2025-26",
+  "teams": [
+    {
+      "team_id": 101,
+      "team_name": "Amarillo Wranglers",
+      "aging_out": {
+        "F": 4,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 8,
+        "D": 4,
+        "G": 1
+      },
+      "aging_out_total": 7,
+      "returning_total": 13
+    },
+    {
+      "team_id": 102,
+      "team_name": "Bismarck Bobcats",
+      "aging_out": {
+        "F": 3,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 9,
+        "D": 3,
+        "G": 2
+      },
+      "aging_out_total": 6,
+      "returning_total": 14
+    },
+    {
+      "team_id": 103,
+      "team_name": "Chippewa Steel",
+      "aging_out": {
+        "F": 3,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 5,
+        "G": 1
+      },
+      "aging_out_total": 5,
+      "returning_total": 13
+    },
+    {
+      "team_id": 104,
+      "team_name": "Corpus Christi IceRays",
+      "aging_out": {
+        "F": 2,
+        "D": 2,
+        "G": 0
+      },
+      "returning": {
+        "F": 10,
+        "D": 4,
+        "G": 2
+      },
+      "aging_out_total": 4,
+      "returning_total": 16
+    },
+    {
+      "team_id": 105,
+      "team_name": "Fairbanks Ice Dogs",
+      "aging_out": {
+        "F": 2,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 8,
+        "D": 5,
+        "G": 1
+      },
+      "aging_out_total": 4,
+      "returning_total": 14
+    }
+  ]
+}
