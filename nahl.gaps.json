@@ -1,519 +1,551 @@
 {
-  "scraped_at": "2026-06-02T02:57:38.652Z",
+  "scraped_at": "2026-06-02T03:08:29.965Z",
   "league_name": "NAHL",
-  "season": "2022-23 NA3HL",
+  "season": "2025-26",
   "teams": [
     {
-      "team_id": 388484,
-      "team_name": "Louisiana Drillers",
+      "team_id": 392712,
+      "team_name": "Austin Bruins",
       "aging_out": {
-        "F": 7,
-        "D": 6,
+        "F": 9,
+        "D": 2,
+        "G": 2
+      },
+      "returning": {
+        "F": 3,
+        "D": 5,
+        "G": 0
+      },
+      "aging_out_total": 13,
+      "returning_total": 8
+    },
+    {
+      "team_id": 392735,
+      "team_name": "Springfield Jr. Blues",
+      "aging_out": {
+        "F": 6,
+        "D": 5,
         "G": 1
       },
       "returning": {
-        "F": 6,
-        "D": 2,
-        "G": 3
+        "F": 7,
+        "D": 1,
+        "G": 1
       },
-      "aging_out_total": 14,
+      "aging_out_total": 12,
+      "returning_total": 9
+    },
+    {
+      "team_id": 392722,
+      "team_name": "Lone Star Brahmas",
+      "aging_out": {
+        "F": 8,
+        "D": 2,
+        "G": 0
+      },
+      "returning": {
+        "F": 5,
+        "D": 4,
+        "G": 2
+      },
+      "aging_out_total": 10,
       "returning_total": 11
     },
     {
-      "team_id": 388493,
-      "team_name": "Mason City Toros",
+      "team_id": 392749,
+      "team_name": "New Hampshire Mountain Kings",
+      "aging_out": {
+        "F": 4,
+        "D": 5,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 3,
+        "G": 1
+      },
+      "aging_out_total": 10,
+      "returning_total": 11
+    },
+    {
+      "team_id": 392730,
+      "team_name": "Northeast Generals",
       "aging_out": {
         "F": 7,
         "D": 2,
         "G": 1
       },
       "returning": {
+        "F": 6,
+        "D": 4,
+        "G": 1
+      },
+      "aging_out_total": 10,
+      "returning_total": 11
+    },
+    {
+      "team_id": 392737,
+      "team_name": "Wisconsin Windigo",
+      "aging_out": {
+        "F": 6,
+        "D": 3,
+        "G": 1
+      },
+      "returning": {
+        "F": 6,
+        "D": 4,
+        "G": 1
+      },
+      "aging_out_total": 10,
+      "returning_total": 11
+    },
+    {
+      "team_id": 392715,
+      "team_name": "Corpus Christi IceRays",
+      "aging_out": {
+        "F": 5,
+        "D": 3,
+        "G": 2
+      },
+      "returning": {
+        "F": 6,
+        "D": 5,
+        "G": 0
+      },
+      "aging_out_total": 10,
+      "returning_total": 11
+    },
+    {
+      "team_id": 392750,
+      "team_name": "Rochester Jr. Americans",
+      "aging_out": {
         "F": 7,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 1,
         "D": 6,
         "G": 1
       },
       "aging_out_total": 10,
+      "returning_total": 8
+    },
+    {
+      "team_id": 392709,
+      "team_name": "Aberdeen Wings",
+      "aging_out": {
+        "F": 6,
+        "D": 3,
+        "G": 1
+      },
+      "returning": {
+        "F": 6,
+        "D": 4,
+        "G": 1
+      },
+      "aging_out_total": 10,
+      "returning_total": 11
+    },
+    {
+      "team_id": 392736,
+      "team_name": "St. Cloud Norsemen",
+      "aging_out": {
+        "F": 4,
+        "D": 4,
+        "G": 1
+      },
+      "returning": {
+        "F": 9,
+        "D": 2,
+        "G": 1
+      },
+      "aging_out_total": 9,
+      "returning_total": 12
+    },
+    {
+      "team_id": 392728,
+      "team_name": "New Mexico Ice Wolves",
+      "aging_out": {
+        "F": 5,
+        "D": 4,
+        "G": 0
+      },
+      "returning": {
+        "F": 8,
+        "D": 2,
+        "G": 2
+      },
+      "aging_out_total": 9,
+      "returning_total": 12
+    },
+    {
+      "team_id": 392720,
+      "team_name": "Johnstown Tomahawks",
+      "aging_out": {
+        "F": 7,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 6,
+        "D": 5,
+        "G": 1
+      },
+      "aging_out_total": 9,
+      "returning_total": 12
+    },
+    {
+      "team_id": 392726,
+      "team_name": "Minnesota Wilderness",
+      "aging_out": {
+        "F": 6,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 6,
+        "D": 5,
+        "G": 1
+      },
+      "aging_out_total": 9,
+      "returning_total": 12
+    },
+    {
+      "team_id": 392731,
+      "team_name": "Odessa Jackalopes",
+      "aging_out": {
+        "F": 5,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 5,
+        "G": 1
+      },
+      "aging_out_total": 8,
+      "returning_total": 13
+    },
+    {
+      "team_id": 392724,
+      "team_name": "Maryland Black Bears",
+      "aging_out": {
+        "F": 4,
+        "D": 3,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 4,
+        "G": 1
+      },
+      "aging_out_total": 8,
+      "returning_total": 12
+    },
+    {
+      "team_id": 392754,
+      "team_name": "Elmira Aviators",
+      "aging_out": {
+        "F": 5,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 8,
+        "D": 3,
+        "G": 2
+      },
+      "aging_out_total": 8,
+      "returning_total": 13
+    },
+    {
+      "team_id": 392717,
+      "team_name": "El Paso Rhinos",
+      "aging_out": {
+        "F": 3,
+        "D": 4,
+        "G": 1
+      },
+      "returning": {
+        "F": 9,
+        "D": 3,
+        "G": 1
+      },
+      "aging_out_total": 8,
+      "returning_total": 13
+    },
+    {
+      "team_id": 392723,
+      "team_name": "Maine Nordiques",
+      "aging_out": {
+        "F": 4,
+        "D": 3,
+        "G": 1
+      },
+      "returning": {
+        "F": 6,
+        "D": 4,
+        "G": 1
+      },
+      "aging_out_total": 8,
+      "returning_total": 11
+    },
+    {
+      "team_id": 392727,
+      "team_name": "New Jersey Titans",
+      "aging_out": {
+        "F": 4,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 8,
+        "D": 3,
+        "G": 2
+      },
+      "aging_out_total": 7,
+      "returning_total": 13
+    },
+    {
+      "team_id": 392713,
+      "team_name": "Bismarck Bobcats",
+      "aging_out": {
+        "F": 4,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 8,
+        "D": 4,
+        "G": 2
+      },
+      "aging_out_total": 7,
       "returning_total": 14
     },
     {
-      "team_id": 388452,
-      "team_name": "Great Falls Americans",
+      "team_id": 392734,
+      "team_name": "Shreveport Mudbugs",
       "aging_out": {
-        "F": 6,
-        "D": 3,
-        "G": 1
-      },
-      "returning": {
-        "F": 7,
-        "D": 8,
-        "G": 3
-      },
-      "aging_out_total": 10,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388395,
-      "team_name": "Bay State Bobcats",
-      "aging_out": {
-        "F": 8,
-        "D": 0,
-        "G": 2
-      },
-      "returning": {
-        "F": 6,
-        "D": 7,
-        "G": 2
-      },
-      "aging_out_total": 10,
-      "returning_total": 15
-    },
-    {
-      "team_id": 388408,
-      "team_name": "Butte Cobras",
-      "aging_out": {
-        "F": 6,
+        "F": 4,
         "D": 2,
-        "G": 2
+        "G": 1
       },
       "returning": {
         "F": 9,
         "D": 4,
-        "G": 2
-      },
-      "aging_out_total": 10,
-      "returning_total": 15
-    },
-    {
-      "team_id": 388577,
-      "team_name": "Sheridan Hawks",
-      "aging_out": {
-        "F": 4,
-        "D": 3,
-        "G": 2
-      },
-      "returning": {
-        "F": 10,
-        "D": 3,
-        "G": 2
-      },
-      "aging_out_total": 9,
-      "returning_total": 15
-    },
-    {
-      "team_id": 388364,
-      "team_name": "Alexandria Blizzard",
-      "aging_out": {
-        "F": 5,
-        "D": 2,
-        "G": 2
-      },
-      "returning": {
-        "F": 12,
-        "D": 8,
-        "G": 1
-      },
-      "aging_out_total": 9,
-      "returning_total": 21
-    },
-    {
-      "team_id": 388497,
-      "team_name": "Mid Cities Jr. Stars",
-      "aging_out": {
-        "F": 7,
-        "D": 1,
-        "G": 1
-      },
-      "returning": {
-        "F": 11,
-        "D": 8,
-        "G": 2
-      },
-      "aging_out_total": 9,
-      "returning_total": 21
-    },
-    {
-      "team_id": 388544,
-      "team_name": "Oregon Tradesmen",
-      "aging_out": {
-        "F": 5,
-        "D": 2,
-        "G": 1
-      },
-      "returning": {
-        "F": 10,
-        "D": 9,
-        "G": 1
-      },
-      "aging_out_total": 8,
-      "returning_total": 20
-    },
-    {
-      "team_id": 388437,
-      "team_name": "Granite City Lumberjacks",
-      "aging_out": {
-        "F": 5,
-        "D": 3,
-        "G": 0
-      },
-      "returning": {
-        "F": 16,
-        "D": 13,
-        "G": 2
-      },
-      "aging_out_total": 8,
-      "returning_total": 31
-    },
-    {
-      "team_id": 388425,
-      "team_name": "Gillette Wild",
-      "aging_out": {
-        "F": 5,
-        "D": 2,
-        "G": 1
-      },
-      "returning": {
-        "F": 13,
-        "D": 7,
-        "G": 3
-      },
-      "aging_out_total": 8,
-      "returning_total": 23
-    },
-    {
-      "team_id": 388523,
-      "team_name": "New Ulm Steel",
-      "aging_out": {
-        "F": 5,
-        "D": 2,
-        "G": 1
-      },
-      "returning": {
-        "F": 12,
-        "D": 5,
-        "G": 1
-      },
-      "aging_out_total": 8,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388550,
-      "team_name": "Peoria Mustangs",
-      "aging_out": {
-        "F": 4,
-        "D": 2,
-        "G": 2
-      },
-      "returning": {
-        "F": 12,
-        "D": 6,
-        "G": 1
-      },
-      "aging_out_total": 8,
-      "returning_total": 19
-    },
-    {
-      "team_id": 388569,
-      "team_name": "Rochester Grizzlies",
-      "aging_out": {
-        "F": 5,
-        "D": 3,
-        "G": 0
-      },
-      "returning": {
-        "F": 10,
-        "D": 6,
-        "G": 2
-      },
-      "aging_out_total": 8,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388398,
-      "team_name": "Bozeman Icedogs",
-      "aging_out": {
-        "F": 4,
-        "D": 1,
-        "G": 2
-      },
-      "returning": {
-        "F": 12,
-        "D": 6,
         "G": 1
       },
       "aging_out_total": 7,
-      "returning_total": 19
+      "returning_total": 14
     },
     {
-      "team_id": 388609,
-      "team_name": "Texas RoadRunners",
+      "team_id": 392710,
+      "team_name": "Amarillo Wranglers",
       "aging_out": {
-        "F": 6,
+        "F": 3,
+        "D": 3,
+        "G": 0
+      },
+      "returning": {
+        "F": 8,
+        "D": 4,
+        "G": 1
+      },
+      "aging_out_total": 6,
+      "returning_total": 13
+    },
+    {
+      "team_id": 392733,
+      "team_name": "Philadelphia Rebels",
+      "aging_out": {
+        "F": 4,
+        "D": 2,
+        "G": 0
+      },
+      "returning": {
+        "F": 8,
+        "D": 5,
+        "G": 2
+      },
+      "aging_out_total": 6,
+      "returning_total": 15
+    },
+    {
+      "team_id": 392711,
+      "team_name": "Anchorage Wolverines",
+      "aging_out": {
+        "F": 3,
+        "D": 2,
+        "G": 1
+      },
+      "returning": {
+        "F": 9,
+        "D": 5,
+        "G": 1
+      },
+      "aging_out_total": 6,
+      "returning_total": 15
+    },
+    {
+      "team_id": 392716,
+      "team_name": "Danbury Hat Tricks",
+      "aging_out": {
+        "F": 4,
+        "D": 1,
+        "G": 1
+      },
+      "returning": {
+        "F": 7,
+        "D": 7,
+        "G": 1
+      },
+      "aging_out_total": 6,
+      "returning_total": 15
+    },
+    {
+      "team_id": 392721,
+      "team_name": "Kenai River Brown Bears",
+      "aging_out": {
+        "F": 4,
         "D": 1,
         "G": 0
       },
       "returning": {
         "F": 9,
-        "D": 6,
-        "G": 3
-      },
-      "aging_out_total": 7,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388540,
-      "team_name": "Norwich Sea Captains",
-      "aging_out": {
-        "F": 3,
-        "D": 1,
-        "G": 2
-      },
-      "returning": {
-        "F": 10,
-        "D": 8,
-        "G": 0
-      },
-      "aging_out_total": 6,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388463,
-      "team_name": "Helena Bighorns",
-      "aging_out": {
-        "F": 4,
-        "D": 1,
-        "G": 1
-      },
-      "returning": {
-        "F": 7,
-        "D": 8,
-        "G": 2
-      },
-      "aging_out_total": 6,
-      "returning_total": 17
-    },
-    {
-      "team_id": 388387,
-      "team_name": "Austin Ice Bats",
-      "aging_out": {
-        "F": 4,
-        "D": 1,
-        "G": 0
-      },
-      "returning": {
-        "F": 14,
-        "D": 8,
-        "G": 4
-      },
-      "aging_out_total": 5,
-      "returning_total": 26
-    },
-    {
-      "team_id": 388414,
-      "team_name": "Danbury Jr. Hat Tricks",
-      "aging_out": {
-        "F": 3,
-        "D": 1,
-        "G": 1
-      },
-      "returning": {
-        "F": 10,
-        "D": 5,
-        "G": 3
-      },
-      "aging_out_total": 5,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388475,
-      "team_name": "Long Beach Sharks",
-      "aging_out": {
-        "F": 4,
-        "D": 1,
-        "G": 0
-      },
-      "returning": {
-        "F": 11,
-        "D": 5,
-        "G": 4
-      },
-      "aging_out_total": 5,
-      "returning_total": 20
-    },
-    {
-      "team_id": 388505,
-      "team_name": "West Bend Power",
-      "aging_out": {
-        "F": 5,
-        "D": 0,
-        "G": 0
-      },
-      "returning": {
-        "F": 10,
-        "D": 5,
-        "G": 3
-      },
-      "aging_out_total": 5,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388378,
-      "team_name": "Atlanta Capitals",
-      "aging_out": {
-        "F": 3,
-        "D": 1,
-        "G": 1
-      },
-      "returning": {
-        "F": 11,
-        "D": 8,
-        "G": 3
-      },
-      "aging_out_total": 5,
-      "returning_total": 22
-    },
-    {
-      "team_id": 388602,
-      "team_name": "Texas Brahmas",
-      "aging_out": {
-        "F": 5,
-        "D": 0,
-        "G": 0
-      },
-      "returning": {
-        "F": 10,
-        "D": 6,
-        "G": 2
-      },
-      "aging_out_total": 5,
-      "returning_total": 18
-    },
-    {
-      "team_id": 388619,
-      "team_name": "Willmar WarHawks",
-      "aging_out": {
-        "F": 2,
-        "D": 2,
-        "G": 0
-      },
-      "returning": {
-        "F": 12,
-        "D": 2,
-        "G": 3
-      },
-      "aging_out_total": 4,
-      "returning_total": 17
-    },
-    {
-      "team_id": 388520,
-      "team_name": "New Mexico Ice Wolves",
-      "aging_out": {
-        "F": 1,
-        "D": 3,
-        "G": 0
-      },
-      "returning": {
-        "F": 13,
-        "D": 7,
-        "G": 1
-      },
-      "aging_out_total": 4,
-      "returning_total": 21
-    },
-    {
-      "team_id": 388628,
-      "team_name": "Yellowstone Quake",
-      "aging_out": {
-        "F": 1,
-        "D": 2,
-        "G": 1
-      },
-      "returning": {
-        "F": 11,
-        "D": 4,
-        "G": 2
-      },
-      "aging_out_total": 4,
-      "returning_total": 17
-    },
-    {
-      "team_id": 388530,
-      "team_name": "Northeast Generals",
-      "aging_out": {
-        "F": 2,
-        "D": 1,
-        "G": 1
-      },
-      "returning": {
-        "F": 13,
         "D": 5,
         "G": 2
       },
-      "aging_out_total": 4,
-      "returning_total": 20
-    },
-    {
-      "team_id": 388615,
-      "team_name": "Wausau Cyclones",
-      "aging_out": {
-        "F": 2,
-        "D": 1,
-        "G": 0
-      },
-      "returning": {
-        "F": 8,
-        "D": 7,
-        "G": 1
-      },
-      "aging_out_total": 3,
+      "aging_out_total": 5,
       "returning_total": 16
     },
     {
-      "team_id": 388391,
-      "team_name": "Badlands Sabres",
+      "team_id": 392725,
+      "team_name": "Minot Minotauros",
       "aging_out": {
-        "F": 0,
+        "F": 1,
+        "D": 4,
+        "G": 0
+      },
+      "returning": {
+        "F": 11,
+        "D": 3,
+        "G": 2
+      },
+      "aging_out_total": 5,
+      "returning_total": 16
+    },
+    {
+      "team_id": 392732,
+      "team_name": "Oklahoma Warriors",
+      "aging_out": {
+        "F": 2,
         "D": 2,
         "G": 1
       },
       "returning": {
-        "F": 19,
-        "D": 6,
-        "G": 3
+        "F": 10,
+        "D": 5,
+        "G": 1
       },
-      "aging_out_total": 3,
-      "returning_total": 28
+      "aging_out_total": 5,
+      "returning_total": 16
     },
     {
-      "team_id": 388516,
-      "team_name": "New Jersey Titans",
+      "team_id": 392756,
+      "team_name": "Watertown Shamrocks",
       "aging_out": {
-        "F": 1,
-        "D": 0,
+        "F": 2,
+        "D": 3,
         "G": 0
       },
       "returning": {
-        "F": 12,
-        "D": 8,
-        "G": 4
+        "F": 10,
+        "D": 4,
+        "G": 2
       },
-      "aging_out_total": 1,
-      "returning_total": 24
+      "aging_out_total": 5,
+      "returning_total": 16
     },
     {
-      "team_id": 388512,
-      "team_name": "Minnesota Loons",
+      "team_id": 392729,
+      "team_name": "North Iowa Bulls",
+      "aging_out": {
+        "F": 3,
+        "D": 2,
+        "G": 0
+      },
+      "returning": {
+        "F": 9,
+        "D": 5,
+        "G": 2
+      },
+      "aging_out_total": 5,
+      "returning_total": 16
+    },
+    {
+      "team_id": 392755,
+      "team_name": "Minnesota Mallards",
+      "aging_out": {
+        "F": 3,
+        "D": 1,
+        "G": 0
+      },
+      "returning": {
+        "F": 7,
+        "D": 4,
+        "G": 2
+      },
+      "aging_out_total": 4,
+      "returning_total": 13
+    },
+    {
+      "team_id": 392718,
+      "team_name": "Fairbanks Ice Dogs",
+      "aging_out": {
+        "F": 2,
+        "D": 0,
+        "G": 1
+      },
+      "returning": {
+        "F": 10,
+        "D": 7,
+        "G": 1
+      },
+      "aging_out_total": 3,
+      "returning_total": 18
+    },
+    {
+      "team_id": 392719,
+      "team_name": "Janesville Jets",
+      "aging_out": {
+        "F": 1,
+        "D": 1,
+        "G": 0
+      },
+      "returning": {
+        "F": 11,
+        "D": 6,
+        "G": 2
+      },
+      "aging_out_total": 2,
+      "returning_total": 19
+    },
+    {
+      "team_id": 392714,
+      "team_name": "Chippewa Steel",
       "aging_out": {
         "F": 0,
         "D": 1,
         "G": 0
       },
       "returning": {
-        "F": 10,
-        "D": 7,
+        "F": 12,
+        "D": 6,
         "G": 2
       },
       "aging_out_total": 1,
-      "returning_total": 19
+      "returning_total": 20
     }
   ]
 }
