@@ -16,6 +16,8 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: master
 
       - name: Fetch latest data
         run: |
