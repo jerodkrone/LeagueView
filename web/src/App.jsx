@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const LEAGUES = [
-  { key: 'ushl', label: 'USHL', url: './ushl.gaps.json' },
   { key: 'nahl', label: 'NAHL', url: './nahl.gaps.json' },
+  { key: 'ushl', label: 'USHL', url: './ushl.gaps.json' },
 ]
 
 const POSITIONS = [
@@ -13,24 +13,34 @@ const POSITIONS = [
   { key: 'G', label: 'Goalie' },
 ]
 
-function PositionPips({ counts, type }) {
+function PositionPips({ counts, type, posKey }) {
   const color = type === 'aging' ? '#f97316' : '#38bdf8'
   const items = []
-  for (let i = 0; i < counts.F; i++) items.push({ pos: 'F', color })
-  for (let i = 0; i < counts.D; i++) items.push({ pos: 'D', color })
-  for (let i = 0; i < counts.G; i++) items.push({ pos: 'G', color })
+  for (let i = 0; i < counts.F; i++) items.push({ pos: 'F' })
+  for (let i = 0; i < counts.D; i++) items.push({ pos: 'D' })
+  for (let i = 0; i < counts.G; i++) items.push({ pos: 'G' })
   return (
     <div className="pips">
-      {items.map((p, i) => (
-        <span key={i} className="pip" style={{ background: p.color }} title={p.pos}>
-          {p.pos}
-        </span>
-      ))}
+      {items.map((p, i) => {
+        const active = posKey === 'all' || posKey === p.pos
+        return (
+          <span
+            key={i}
+            className="pip"
+            style={{ background: active ? color : '#374151' }}
+            title={p.pos}
+          >
+            {p.pos}
+          </span>
+        )
+      })}
     </div>
   )
 }
 
-function TeamCard({ team, rank }) {
+function TeamCard({ team, rank, posKey }) {
+  const agingCount  = posKey === 'all' ? team.aging_out_total  : team.aging_out[posKey]
+  const returnCount = posKey === 'all' ? team.returning_total  : team.returning[posKey]
   return (
     <div className="card">
       <div className="card-rank">#{rank}</div>
@@ -39,14 +49,14 @@ function TeamCard({ team, rank }) {
 
         <div className="card-section">
           <div className="card-label">Aging out</div>
-          <div className="card-count aging">{team.aging_out_total}</div>
-          <PositionPips counts={team.aging_out} type="aging" />
+          <div className="card-count aging">{agingCount}</div>
+          <PositionPips counts={team.aging_out} type="aging" posKey={posKey} />
         </div>
 
         <div className="card-section">
           <div className="card-label">Returning</div>
-          <div className="card-count returning">{team.returning_total}</div>
-          <PositionPips counts={team.returning} type="returning" />
+          <div className="card-count returning">{returnCount}</div>
+          <PositionPips counts={team.returning} type="returning" posKey={posKey} />
         </div>
       </div>
     </div>
@@ -159,7 +169,7 @@ export default function App() {
       ) : (
         <main className="grid" style={{ opacity: loading ? 0.4 : 1 }}>
           {sorted.map((team, i) => (
-            <TeamCard key={team.team_id} team={team} rank={i + 1} />
+            <TeamCard key={team.team_id} team={team} rank={i + 1} posKey={pos.key} />
           ))}
         </main>
       )}
