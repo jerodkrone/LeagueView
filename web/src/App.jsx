@@ -35,7 +35,7 @@ export function getAgingInfo(team, birthYear, posKey) {
 export function deriveAvailableYears(teams) {
   const years = new Set()
   teams.forEach((t) => Object.keys(t.aging_out.by_year || {}).forEach((y) => years.add(y)))
-  return ['all', ...Array.from(years).sort()]
+  return ['all', ...Array.from(years).sort((a, b) => Number(a) - Number(b))]
 }
 
 function PositionPips({ counts, type, posKey }) {
@@ -103,9 +103,10 @@ function EmptyState({ position, onClear }) {
 export default function App() {
   const [league, setLeague] = useState(LEAGUES[0])
   const [pos, setPos] = useState(POSITIONS[0])
-  const [birthYear, setBirthYear] = useState(
-    () => localStorage.getItem('leagueview-birth-year') || 'all'
-  )
+  const [birthYear, setBirthYear] = useState(() => {
+    const stored = localStorage.getItem('leagueview-birth-year')
+    return /^\d{4}$/.test(stored) ? stored : 'all'
+  })
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -122,12 +123,11 @@ export default function App() {
           setData(d)
           setLoading(false)
           // D6: if user had a birth year saved but data lacks by_year, reset
+          setByYearMissing(false)
           if (birthYear !== 'all' && !d.teams.some((t) => t.aging_out.by_year)) {
             setBirthYear('all')
             localStorage.setItem('leagueview-birth-year', 'all')
             setByYearMissing(true)
-          } else {
-            setByYearMissing(false)
           }
         }
       })
