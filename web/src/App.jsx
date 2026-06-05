@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 
 const LEAGUES = [
@@ -12,6 +12,31 @@ const POSITIONS = [
   { key: 'D', label: 'Defense' },
   { key: 'G', label: 'Goalie' },
 ]
+
+// Resolves aging counts for sort and card display.
+// Always returns { count: number, counts: {F,D,G} }.
+//
+//  birthYear='all'  → counts = team.aging_out F/D/G totals
+//  birthYear='2009' → counts = by_year['2009'] ?? {F:0,D:0,G:0}
+//
+//  count = sum(counts) if posKey='all', else counts[posKey]
+export function getAgingInfo(team, birthYear, posKey) {
+  const raw = birthYear !== 'all'
+    ? (team.aging_out.by_year?.[birthYear] ?? { F: 0, D: 0, G: 0 })
+    : { F: team.aging_out.F, D: team.aging_out.D, G: team.aging_out.G }
+  const count = posKey === 'all'
+    ? (raw.F + raw.D + raw.G)
+    : (raw[posKey] ?? 0)
+  return { count, counts: raw }
+}
+
+// Derives available birth years from loaded data.
+// Returns ['all', ...sortedYears] where years come from aging_out.by_year keys.
+export function deriveAvailableYears(teams) {
+  const years = new Set()
+  teams.forEach((t) => Object.keys(t.aging_out.by_year || {}).forEach((y) => years.add(y)))
+  return ['all', ...Array.from(years).sort()]
+}
 
 function PositionPips({ counts, type, posKey }) {
   const color = type === 'aging' ? '#f97316' : '#38bdf8'
@@ -38,9 +63,8 @@ function PositionPips({ counts, type, posKey }) {
   )
 }
 
-function TeamCard({ team, rank, posKey }) {
-  const agingCount  = posKey === 'all' ? team.aging_out_total  : team.aging_out[posKey]
-  const returnCount = posKey === 'all' ? team.returning_total  : team.returning[posKey]
+function TeamCard({ team, rank, posKey, agingCount, agingCounts }) {
+  const returnCount = posKey === 'all' ? team.returning_total : team.returning[posKey]
   return (
     <div className="card">
       <div className="card-rank">#{rank}</div>
@@ -50,7 +74,7 @@ function TeamCard({ team, rank, posKey }) {
         <div className="card-section">
           <div className="card-label">Aging out</div>
           <div className="card-count aging">{agingCount}</div>
-          <PositionPips counts={team.aging_out} type="aging" posKey={posKey} />
+          <PositionPips counts={agingCounts} type="aging" posKey={posKey} />
         </div>
 
         <div className="card-section">
@@ -79,9 +103,13 @@ function EmptyState({ position, onClear }) {
 export default function App() {
   const [league, setLeague] = useState(LEAGUES[0])
   const [pos, setPos] = useState(POSITIONS[0])
+  const [birthYear, setBirthYear] = useState(
+    () => localStorage.getItem('leagueview-birth-year') || 'all'
+  )
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [byYearMissing, setByYearMissing] = useState(false)
 
   useEffect(() => {
     let ignore = false
@@ -89,15 +117,40 @@ export default function App() {
     setError(null)
     fetch(league.url)
       .then((r) => { if (!r.ok) throw new Error(r.status); return r.json() })
-      .then((d) => { if (!ignore) { setData(d); setLoading(false) } })
+      .then((d) => {
+        if (!ignore) {
+          setData(d)
+          setLoading(false)
+          // D6: if user had a birth year saved but data lacks by_year, reset
+          if (birthYear !== 'all' && !d.teams.some((t) => t.aging_out.by_year)) {
+            setBirthYear('all')
+            localStorage.setItem('leagueview-birth-year', 'all')
+            setByYearMissing(true)
+          } else {
+            setByYearMissing(false)
+          }
+        }
+      })
       .catch((e) => { if (!ignore) { setError(e.message); setLoading(false) } })
     return () => { ignore = true }
-  }, [league])
+  }, [league]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function switchLeague(l) {
     setLeague(l)
     setPos(POSITIONS[0])
+    setBirthYear('all')
+    localStorage.setItem('leagueview-birth-year', 'all')
   }
+
+  function selectBirthYear(y) {
+    setBirthYear(y)
+    localStorage.setItem('leagueview-birth-year', y)
+  }
+
+  const availableYears = useMemo(
+    () => (data ? deriveAvailableYears(data.teams) : ['all']),
+    [data]
+  )
 
   if (error) return <div className="state-msg">Failed to load data: {error}</div>
   if (!data) return <div className="state-msg">Loading…</div>
@@ -109,12 +162,18 @@ export default function App() {
   })
 
   const sorted = [...data.teams]
-    .filter((t) => pos.key === 'all' || t.aging_out[pos.key] > 0)
-    .sort((a, b) =>
-      pos.key === 'all'
-        ? b.aging_out_total - a.aging_out_total
-        : b.aging_out[pos.key] - a.aging_out[pos.key]
-    )
+    .filter((t) => {
+      // D1: when a birth year is active, show all teams (no hiding zeros)
+      if (birthYear !== 'all') return true
+      return pos.key === 'all' || t.aging_out[pos.key] > 0
+    })
+    .sort((a, b) => {
+      const aInfo = getAgingInfo(a, birthYear, pos.key)
+      const bInfo = getAgingInfo(b, birthYear, pos.key)
+      return bInfo.count - aInfo.count
+    })
+
+  const showYearChips = availableYears.length > 1
 
   return (
     <div className="app">
@@ -151,6 +210,10 @@ export default function App() {
         </p>
       </header>
 
+      {byYearMissing && (
+        <p className="by-year-notice">Birth year data updating — showing all classes</p>
+      )}
+
       <div className="pos-filter" role="group" aria-label="Filter by position">
         {POSITIONS.map((p_) => (
           <button
@@ -164,13 +227,38 @@ export default function App() {
         ))}
       </div>
 
-      {sorted.length === 0 && pos.key !== 'all' ? (
+      {showYearChips && (
+        <div className="year-filter" role="group" aria-label="Filter by birth year">
+          {availableYears.map((y) => (
+            <button
+              key={y}
+              className="year-pill"
+              aria-pressed={birthYear === y}
+              onClick={() => selectBirthYear(y)}
+            >
+              {y === 'all' ? 'All classes' : y}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {sorted.length === 0 && pos.key !== 'all' && birthYear === 'all' ? (
         <EmptyState position={pos.key} onClear={() => setPos(POSITIONS[0])} />
       ) : (
         <main className="grid" style={{ opacity: loading ? 0.4 : 1 }}>
-          {sorted.map((team, i) => (
-            <TeamCard key={team.team_id} team={team} rank={i + 1} posKey={pos.key} />
-          ))}
+          {sorted.map((team, i) => {
+            const { count, counts } = getAgingInfo(team, birthYear, pos.key)
+            return (
+              <TeamCard
+                key={team.team_id}
+                team={team}
+                rank={i + 1}
+                posKey={pos.key}
+                agingCount={count}
+                agingCounts={counts}
+              />
+            )
+          })}
         </main>
       )}
 

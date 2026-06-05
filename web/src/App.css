@@ -132,6 +132,45 @@ body {
   color: var(--text-secondary);
 }
 
+/* ── Year filter ── */
+.year-filter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.year-pill {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 12px;
+  height: 28px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.year-pill[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--accent-blue) 15%, transparent);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+.year-pill:hover:not([aria-pressed="true"]) {
+  border-color: var(--border-hover);
+  color: var(--text-secondary);
+}
+
+/* ── By-year missing notice ── */
+.by-year-notice {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  padding: 6px 10px;
+  background: color-mix(in srgb, var(--accent-orange) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-orange) 25%, transparent);
+  border-radius: 6px;
+}
+
 /* ── Grid ── */
 .grid {
   display: grid;
