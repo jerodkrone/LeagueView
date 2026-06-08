@@ -16,26 +16,22 @@ const POSITIONS = [
 // Resolves aging counts for sort and card display.
 // Always returns { count: number, counts: {F,D,G} }.
 //
-//  birthYear='all'  → counts = team.aging_out F/D/G totals
-//  birthYear='2009' → counts = by_year['2009'] ?? {F:0,D:0,G:0}
-//
-//  count = sum(counts) if posKey='all', else counts[posKey]
+//  counts = aging_out.by_year[birthYear] ?? {F:0,D:0,G:0}
+//  count  = sum(counts) if posKey='all', else counts[posKey]
 export function getAgingInfo(team, birthYear, posKey) {
-  const raw = birthYear !== 'all'
-    ? (team.aging_out.by_year?.[birthYear] ?? { F: 0, D: 0, G: 0 })
-    : { F: team.aging_out.F, D: team.aging_out.D, G: team.aging_out.G }
+  const raw = team.aging_out.by_year?.[birthYear] ?? { F: 0, D: 0, G: 0 }
   const count = posKey === 'all'
     ? (raw.F + raw.D + raw.G)
     : (raw[posKey] ?? 0)
   return { count, counts: raw }
 }
 
-// Derives available birth years from loaded data.
-// Returns ['all', ...sortedYears] where years come from aging_out.by_year keys.
+// Derives available age-out years from loaded data, sorted ascending.
+// Returns [] when no team has by_year data.
 export function deriveAvailableYears(teams) {
   const years = new Set()
   teams.forEach((t) => Object.keys(t.aging_out.by_year || {}).forEach((y) => years.add(y)))
-  return ['all', ...Array.from(years).sort((a, b) => Number(a) - Number(b))]
+  return Array.from(years).sort((a, b) => Number(a) - Number(b))
 }
 
 function PositionPips({ counts, type, posKey }) {
@@ -87,25 +83,12 @@ function TeamCard({ team, rank, posKey, agingCount, agingCounts }) {
   )
 }
 
-function EmptyState({ position, onClear }) {
-  const icon = position === 'G' ? '🥅' : '🏒'
-  const label = { F: 'Forward', D: 'Defense', G: 'Goalie' }[position]
-  return (
-    <div className="empty-state">
-      <span className="empty-icon">{icon}</span>
-      <p className="empty-heading">No {label} spots opening this season</p>
-      <p className="empty-sub">Try a different position or switch leagues</p>
-      <button className="empty-clear" onClick={onClear}>Show all positions</button>
-    </div>
-  )
-}
-
 export default function App() {
   const [league, setLeague] = useState(LEAGUES[0])
   const [pos, setPos] = useState(POSITIONS[0])
   const [birthYear, setBirthYear] = useState(() => {
-    const stored = localStorage.getItem('leagueview-birth-year')
-    return /^\d{4}$/.test(stored) ? stored : 'all'
+    const stored = localStorage.getItem('leagueview-age-out-year')
+    return /^\d{4}$/.test(stored) ? stored : null
   })
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
@@ -122,13 +105,14 @@ export default function App() {
         if (!ignore) {
           setData(d)
           setLoading(false)
-          // D6: if user had a birth year saved but data lacks by_year, reset
-          setByYearMissing(false)
-          if (birthYear !== 'all' && !d.teams.some((t) => t.aging_out.by_year)) {
-            setBirthYear('all')
-            localStorage.setItem('leagueview-birth-year', 'all')
-            setByYearMissing(true)
-          }
+          // Resolve the active year now that this league's data has loaded:
+          // keep the current year if it's still valid here, else default to
+          // the soonest available one. No valid year anywhere -> hide the filter.
+          const years = deriveAvailableYears(d.teams)
+          setByYearMissing(years.length === 0)
+          const resolved = birthYear && years.includes(birthYear) ? birthYear : (years[0] ?? null)
+          setBirthYear(resolved)
+          if (resolved) localStorage.setItem('leagueview-age-out-year', resolved)
         }
       })
       .catch((e) => { if (!ignore) { setError(e.message); setLoading(false) } })
@@ -138,17 +122,15 @@ export default function App() {
   function switchLeague(l) {
     setLeague(l)
     setPos(POSITIONS[0])
-    setBirthYear('all')
-    localStorage.setItem('leagueview-birth-year', 'all')
   }
 
   function selectBirthYear(y) {
     setBirthYear(y)
-    localStorage.setItem('leagueview-birth-year', y)
+    localStorage.setItem('leagueview-age-out-year', y)
   }
 
   const availableYears = useMemo(
-    () => (data ? deriveAvailableYears(data.teams) : ['all']),
+    () => (data ? deriveAvailableYears(data.teams) : []),
     [data]
   )
 
@@ -162,18 +144,13 @@ export default function App() {
   })
 
   const sorted = [...data.teams]
-    .filter((t) => {
-      // D1: when a birth year is active, show all teams (no hiding zeros)
-      if (birthYear !== 'all') return true
-      return pos.key === 'all' || t.aging_out[pos.key] > 0
-    })
     .sort((a, b) => {
       const aInfo = getAgingInfo(a, birthYear, pos.key)
       const bInfo = getAgingInfo(b, birthYear, pos.key)
       return bInfo.count - aInfo.count
     })
 
-  const showYearChips = availableYears.length > 1
+  const showYearChips = availableYears.length > 0
 
   return (
     <div className="app">
@@ -211,7 +188,7 @@ export default function App() {
       </header>
 
       {byYearMissing && (
-        <p className="by-year-notice">Birth year data updating — showing all classes</p>
+        <p className="by-year-notice">Age-out year data unavailable for this league</p>
       )}
 
       <div className="pos-filter" role="group" aria-label="Filter by position">
@@ -228,7 +205,7 @@ export default function App() {
       </div>
 
       {showYearChips && (
-        <div className="year-filter" role="group" aria-label="Filter by birth year">
+        <div className="year-filter" role="group" aria-label="Filter by age-out year">
           {availableYears.map((y) => (
             <button
               key={y}
@@ -236,31 +213,27 @@ export default function App() {
               aria-pressed={birthYear === y}
               onClick={() => selectBirthYear(y)}
             >
-              {y === 'all' ? 'All classes' : y}
+              {y}
             </button>
           ))}
         </div>
       )}
 
-      {sorted.length === 0 && pos.key !== 'all' && birthYear === 'all' ? (
-        <EmptyState position={pos.key} onClear={() => setPos(POSITIONS[0])} />
-      ) : (
-        <main className="grid" style={{ opacity: loading ? 0.4 : 1 }}>
-          {sorted.map((team, i) => {
-            const { count, counts } = getAgingInfo(team, birthYear, pos.key)
-            return (
-              <TeamCard
-                key={team.team_id}
-                team={team}
-                rank={i + 1}
-                posKey={pos.key}
-                agingCount={count}
-                agingCounts={counts}
-              />
-            )
-          })}
-        </main>
-      )}
+      <main className="grid" style={{ opacity: loading ? 0.4 : 1 }}>
+        {sorted.map((team, i) => {
+          const { count, counts } = getAgingInfo(team, birthYear, pos.key)
+          return (
+            <TeamCard
+              key={team.team_id}
+              team={team}
+              rank={i + 1}
+              posKey={pos.key}
+              agingCount={count}
+              agingCounts={counts}
+            />
+          )
+        })}
+      </main>
 
       <footer className="footer">
         Data sourced from {data.league_name} league API · not affiliated with {data.league_name}
