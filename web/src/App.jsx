@@ -26,6 +26,17 @@ export function getAgingInfo(team, birthYear, posKey) {
   return { count, counts: raw }
 }
 
+// Resolves returning counts for card display. Mirrors getAgingInfo.
+// Falls back to flat team.returning when by_year has no entry for birthYear
+// (e.g., year=2026 where aging-out players aren't "returning").
+export function getReturningInfo(team, birthYear, posKey) {
+  const raw = team.returning.by_year?.[birthYear] ?? team.returning
+  const count = posKey === 'all'
+    ? (raw.F + raw.D + raw.G)
+    : (raw[posKey] ?? 0)
+  return { count, counts: raw }
+}
+
 // Derives available age-out years from loaded data, sorted ascending.
 // Returns [] when no team has by_year data.
 export function deriveAvailableYears(teams) {
@@ -59,8 +70,7 @@ function PositionPips({ counts, type, posKey }) {
   )
 }
 
-function TeamCard({ team, rank, posKey, agingCount, agingCounts }) {
-  const returnCount = posKey === 'all' ? team.returning_total : team.returning[posKey]
+function TeamCard({ team, rank, posKey, agingCount, agingCounts, returningCount, returningCounts }) {
   return (
     <div className="card">
       <div className="card-rank">#{rank}</div>
@@ -75,8 +85,8 @@ function TeamCard({ team, rank, posKey, agingCount, agingCounts }) {
 
         <div className="card-section">
           <div className="card-label">Returning</div>
-          <div className="card-count returning">{returnCount}</div>
-          <PositionPips counts={team.returning} type="returning" posKey={posKey} />
+          <div className="card-count returning">{returningCount}</div>
+          <PositionPips counts={returningCounts} type="returning" posKey={posKey} />
         </div>
       </div>
     </div>
@@ -222,6 +232,7 @@ export default function App() {
       <main className="grid" style={{ opacity: loading ? 0.4 : 1 }}>
         {sorted.map((team, i) => {
           const { count, counts } = getAgingInfo(team, birthYear, pos.key)
+          const { count: retCount, counts: retCounts } = getReturningInfo(team, birthYear, pos.key)
           return (
             <TeamCard
               key={team.team_id}
@@ -230,6 +241,8 @@ export default function App() {
               posKey={pos.key}
               agingCount={count}
               agingCounts={counts}
+              returningCount={retCount}
+              returningCounts={retCounts}
             />
           )
         })}
