@@ -27,10 +27,19 @@ export function getAgingInfo(team, birthYear, posKey) {
 }
 
 // Resolves returning counts for card display. Mirrors getAgingInfo.
-// Falls back to flat team.returning when by_year has no entry for birthYear
-// (e.g., year=2026 where aging-out players aren't "returning").
+//
+// returning.by_year is cumulative-decreasing — "players still eligible AFTER
+// the season ending in this year" — and sparse: a team only has keys for its
+// own roster's age-out years. A missing year therefore resolves to the entry
+// at the largest key at or below it (past the team's final year that entry is
+// all zeros), NOT to the flat totals. The flat fallback remains only for
+// legacy data with no usable by_year keys.
 export function getReturningInfo(team, birthYear, posKey) {
-  const raw = team.returning.by_year?.[birthYear] ?? team.returning
+  const byYear = team.returning.by_year ?? {}
+  const nearestYear = Object.keys(byYear)
+    .filter((y) => Number(y) <= Number(birthYear))
+    .sort((a, b) => Number(b) - Number(a))[0]
+  const raw = nearestYear ? byYear[nearestYear] : team.returning
   const count = posKey === 'all'
     ? (raw.F + raw.D + raw.G)
     : (raw[posKey] ?? 0)
